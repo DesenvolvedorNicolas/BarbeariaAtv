@@ -1,0 +1,18 @@
+{
+  "name": "barbearia-api",
+  "version": "1.0.0",
+  "description": "API REST de agendamentos para barbearia (Express + Neon + Vercel)",
+  "main": "api/index.js",
+  "scripts": {
+    "dev": "node --env-file=.env server.js",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

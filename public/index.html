@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Barbearia · Agendamentos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>💈 Barbearia</h1>
+    <nav id="tabs">
+      <button data-tab="agendamentos" class="active">Agendamentos</button>
+      <button data-tab="clientes">Clientes</button>
+      <button data-tab="barbeiros">Barbeiros</button>
+      <button data-tab="servicos">Serviços</button>
+    </nav>
+  </header>
+
+  <main>
+    <div id="msg" class="msg" hidden></div>
+
+    <!-- AGENDAMENTOS -->
+    <section id="agendamentos" class="panel">
+      <form id="form-agendamentos">
+        <select name="cliente_id" id="sel-cliente" required></select>
+        <select name="barbeiro_id" id="sel-barbeiro" required></select>
+        <select name="servico_id" id="sel-servico" required></select>
+        <input type="datetime-local" name="data_hora" required />
+        <input name="observacoes" placeholder="Observações (opcional)" />
+        <button type="submit">Agendar</button>
+      </form>
+      <table>
+        <thead><tr><th>Data/Hora</th><th>Cliente</th><th>Barbeiro</th><th>Serviço</th><th>Status</th><th></th></tr></thead>
+        <tbody id="lista-agendamentos"></tbody>
+      </table>
+    </section>
+
+    <!-- CLIENTES -->
+    <section id="clientes" class="panel" hidden>
+      <form id="form-clientes">
+        <input name="nome" placeholder="Nome" required />
+        <input name="telefone" placeholder="Telefone" required />
+        <input name="email" type="email" placeholder="E-mail (opcional)" />
+        <button type="submit">Adicionar</button>
+      </form>
+      <table>
+        <thead><tr><th>Nome</th><th>Telefone</th><th>E-mail</th><th></th></tr></thead>
+        <tbody id="lista-clientes"></tbody>
+      </table>
+    </section>
+
+    <!-- BARBEIROS -->
+    <section id="barbeiros" class="panel" hidden>
+      <form id="form-barbeiros">
+        <input name="nome" placeholder="Nome" required />
+        <input name="especialidade" placeholder="Especialidade" />
+        <button type="submit">Adicionar</button>
+      </form>
+      <table>
+        <thead><tr><th>Nome</th><th>Especialidade</th><th></th></tr></thead>
+        <tbody id="lista-barbeiros"></tbody>
+      </table>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="panel" hidden>
+      <form id="form-servicos">
+        <input name="nome" placeholder="Nome do serviço" required />
+        <input name="preco" type="number" step="0.01" min="0" placeholder="Preço (R$)" required />
+        <input name="duracao_min" type="number" min="1" placeholder="Duração (min)" required />
+        <button type="submit">Adicionar</button>
+      </form>
+      <table>
+        <thead><tr><th>Serviço</th><th>Preço</th><th>Duração</th><th></th></tr></thead>
+        <tbody id="lista-servicos"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
